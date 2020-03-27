@@ -11,5 +11,13 @@ $(document).ready(function () {
     $('.tabs-item-active').toggleClass('tabs-item-active');
     $(this).toggleClass('tabs-item-active');
 
-  })
+  });
+  $("a.play").fancybox({
+      'titleShow'     : false,
+      'transitionIn'  : 'elastic',
+      'transitionOut' : 'elastic',
+      'href' : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+      'type'      : 'swf',
+      'swf'       : {'wmode':'transparent','allowfullscreen':'true'}
+    }); 
 });

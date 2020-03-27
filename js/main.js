@@ -12,12 +12,24 @@ $(document).ready(function () {
     $(this).toggleClass('tabs-item-active');
 
   });
-  $("a.play").fancybox({
-      'titleShow'     : false,
-      'transitionIn'  : 'elastic',
-      'transitionOut' : 'elastic',
-      'href' : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-      'type'      : 'swf',
-      'swf'       : {'wmode':'transparent','allowfullscreen':'true'}
-    }); 
+  $(".play").click(function() {
+    $.fancybox({
+
+    padding: 0,
+        'autoScale'     : false,
+        'transitionIn'  : 'none',
+        'transitionOut' : 'none',
+        'title'         : this.title,
+        'width'         : 795,
+        'height'        : 447,
+        'href'          : this.href.replace(new RegExp("watch.*v=","i"), "v/"),
+        'type'          : 'swf',
+        'swf'           : {
+        'wmode'             : 'transparent',
+        'allowfullscreen'   : 'true'
+         }
+
+    });
+    return false;
+});
 });
